@@ -1,11 +1,11 @@
 
 # MaxisOS
 
-### Eight helpers inside [Claude Code](https://claude.ai/code) that organize your [Obsidian](https://obsidian.md) notes so you do not have to.
+### Multi-agent AI for [Obsidian](https://obsidian.md) — powered by [Claude Code](https://claude.ai/code)
 
-You talk in normal language. They file notes, link ideas, search your vault, handle meeting text, and help with email. They can reply in whatever language you use.
+**MaxisOS** is an open-source **AI agent system** for personal knowledge management: eight specialized agents handle capture, filing, search, linking, meeting notes, and (optionally) **Gmail** / **Google Calendar** via **MCP**. You use **natural language**; the agents update your vault. **Multilingual** — write in any language, responses follow.
 
-**In one sentence:** MaxisOS is a set of pre-built “modes” for Claude Code—each mode is tuned for one job (writing notes, sorting the inbox, searching, and so on). You stay in chat; your vault stays tidy behind the scenes.
+**Elevator pitch:** Pre-built **Claude Code** subagents with scoped tools and routing, so one chat interface drives **note-taking automation**, **inbox triage**, **RAG-style vault Q&A**, and light **workflow orchestration** without leaving the conversation.
 
 **Repository:** [github.com/maxiguillermo1/MaxisOS](https://github.com/maxiguillermo1/MaxisOS)
 
