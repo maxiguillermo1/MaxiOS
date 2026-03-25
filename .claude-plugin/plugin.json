@@ -1,0 +1,31 @@
+{
+  "name": "maxisos",
+  "version": "1.0.1",
+  "description": "Eight Claude Code helpers for your Obsidian vault — capture notes, triage your inbox, search and connect ideas, transcribe meetings, optionally bridge Gmail and Google Calendar, and run vault health checks. You stay in chat; helpers organize in the background. Works in any language.",
+  "author": {
+    "name": "maxiguillermo1",
+    "url": "https://github.com/maxiguillermo1"
+  },
+  "repository": "https://github.com/maxiguillermo1/MaxisOS",
+  "license": "MIT",
+  "keywords": [
+    "maxisos",
+    "obsidian",
+    "vault",
+    "knowledge-management",
+    "zettelkasten",
+    "PARA",
+    "note-taking",
+    "second-brain",
+    "AI-agents",
+    "claude",
+    "claude-code",
+    "transcription",
+    "gmail",
+    "google-calendar",
+    "email",
+    "productivity",
+    "multilingual",
+    "cowork"
+  ]
+}

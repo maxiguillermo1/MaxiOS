@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: MaxisOS documentation
+    url: https://github.com/maxiguillermo1/MaxisOS/tree/main/docs
+    about: Getting started, examples, and agent docs
+  - name: Terms of use & disclaimers
+    url: https://github.com/maxiguillermo1/MaxisOS/blob/main/TERMS_OF_USE.md
+    about: Legal notices and disclaimers
