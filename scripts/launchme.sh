@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # =============================================================================
-# My Brain Is Full - Crew :: Installer
+# MaxisOS :: Installer
 # =============================================================================
 # Run this from inside the cloned repo, which should be inside your vault:
 #
-#   cd /path/to/your-vault/My-Brain-Is-Full-Crew
+#   cd /path/to/your-vault/MaxisOS
 #   bash scripts/launchme.sh
 #
 # It copies agents and references into your vault's .claude/ directory.
@@ -37,7 +37,7 @@ VAULT_DIR="$(cd "$REPO_DIR/.." && pwd)"
 # ── Banner ──────────────────────────────────────────────────────────────────
 echo ""
 echo -e "${BOLD}╔══════════════════════════════════════════╗${NC}"
-echo -e "${BOLD}║  My Brain Is Full - Crew :: Setup        ║${NC}"
+echo -e "${BOLD}║  MaxisOS :: Setup                        ║${NC}"
 echo -e "${BOLD}╚══════════════════════════════════════════╝${NC}"
 echo ""
 echo -e "   Repo:   ${BOLD}${REPO_DIR}${NC}"
@@ -137,8 +137,8 @@ echo -e "   Your vault is ready. Here's what was installed:"
 echo ""
 echo -e "   ${VAULT_DIR}/"
 echo -e "   ├── .claude/"
-echo -e "   │   ├── agents/          ${DIM}← ${AGENT_COUNT} crew agents (CLI)${NC}"
-echo -e "   │   ├── skills/          ${DIM}← ${SKILL_COUNT:-0} crew skills (Cowork/Desktop)${NC}"
+echo -e "   │   ├── agents/          ${DIM}← ${AGENT_COUNT} MaxisOS agents (CLI)${NC}"
+echo -e "   │   ├── skills/          ${DIM}← ${SKILL_COUNT:-0} MaxisOS skills (Cowork/Desktop)${NC}"
 echo -e "   │   └── references/      ${DIM}← shared docs${NC}"
 echo -e "   ├── CLAUDE.md            ${DIM}← project instructions${NC}"
 if [[ "$MCP_ANSWER" =~ ^[Yy]$ ]]; then

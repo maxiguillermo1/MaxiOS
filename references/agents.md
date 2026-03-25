@@ -1,4 +1,4 @@
-# My Brain Is Full - Crew — Agent Directory
+# MaxisOS — Agent Directory
 
 This reference is shared across all agents. Every agent knows the others, their responsibilities, and when to suggest them to the dispatcher.
 

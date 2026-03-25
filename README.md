@@ -7,6 +7,8 @@ You talk in normal language. They file notes, link ideas, search your vault, han
 
 **In one sentence:** MaxisOS is a set of pre-built “modes” for Claude Code—each mode is tuned for one job (writing notes, sorting the inbox, searching, and so on). You stay in chat; your vault stays tidy behind the scenes.
 
+**Repository:** [github.com/maxiguillermo1/MaxisOS](https://github.com/maxiguillermo1/MaxisOS)
+
 ---
 
 ## Why this exists
@@ -58,7 +60,7 @@ Key points:
 
 ---
 
-## The crew (your eight helpers)
+## The eight MaxisOS helpers
 
 Each row is a **role** Claude Code can use when you ask for that kind of work. You do not need to remember technical names—plain requests like “save this” or “sort my inbox” are enough.
 
@@ -102,7 +104,7 @@ graph TB
     Claude -->|"activates the right helper"| Agents
     Claude -->|"chains helpers when needed"| Agents
 
-    subgraph Agents["The crew"]
+    subgraph Agents["MaxisOS"]
         direction TB
 
         subgraph Core["Core: notes & structure"]
@@ -205,10 +207,10 @@ Open Obsidian and create a new vault (or use one you already have).
 
 ```bash
 cd /path/to/your-vault
-git clone https://github.com/gnekt/My-Brain-Is-Full-Crew.git MaxisOS
+git clone https://github.com/maxiguillermo1/MaxisOS.git
 ```
 
-(If the repository URL changes, clone from the URL you use for this project and use a folder name you like; the steps below assume the folder is named `MaxisOS`.)
+This creates a `MaxisOS` folder inside your vault (same name as the repo). The steps below use that folder.
 
 ### 3. Run the installer
 
@@ -342,6 +344,7 @@ MaxisOS/                             ← cloned inside your vault
 ├── .mcp.json                        Optional Gmail + Calendar connectors
 ├── .claude-plugin/plugin.json
 ├── LICENSE
+├── TERMS_OF_USE.md
 ├── README.md
 └── CONTRIBUTING.md
 ```
@@ -406,7 +409,7 @@ MIT: use it, change it, share it. Keep attribution.
 ---
 
 <p align="center">
-  <i>MaxisOS — for when your brain is full.</i>
+  <i>MaxisOS — organize your vault through conversation.</i>
   <br><br>
   <a href="docs/getting-started.md"><strong>Get started</strong></a> · <a href="docs/examples.md"><strong>Examples</strong></a> · <a href="docs/agents/architect.md"><strong>Meet the helpers</strong></a> · <a href="CONTRIBUTING.md"><strong>Contribute</strong></a>
 </p>

@@ -4,7 +4,7 @@
 
 ## What it does
 
-The Librarian is your vault's maintenance crew. While other agents create and organize notes, the Librarian checks that everything stays clean, consistent, and structurally sound over time. Think of it as a weekly health checkup for your entire knowledge base.
+The Librarian is MaxisOS's maintenance role for your vault. While other agents create and organize notes, the Librarian checks that everything stays clean, consistent, and structurally sound over time. Think of it as a weekly health checkup for your entire knowledge base.
 
 Run it once a week (or whenever things feel off), and it performs a thorough 6-phase audit: scanning folder structure, hunting duplicates, verifying every wikilink, auditing frontmatter consistency, reviewing Maps of Content, and generating a detailed health report. It finds the problems you would never notice on your own. That broken link from two months ago, the two nearly identical notes in different folders, the 15 notes still tagged `status: inbox` even though they were filed weeks ago.
 

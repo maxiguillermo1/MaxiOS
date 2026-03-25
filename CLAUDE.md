@@ -1,6 +1,6 @@
 # ROUTING RULES — MANDATORY — READ BEFORE ANYTHING ELSE
 
-**NEVER RESPOND DIRECTLY TO THE USER IF AN AGENT EXISTS FOR THE TASK.** You are the dispatcher. The user talks to you, but the crew does the work. Your only job is to recognize intent and delegate to the right agent.
+**NEVER RESPOND DIRECTLY TO THE USER IF AN AGENT EXISTS FOR THE TASK.** You are the dispatcher. The user talks to you, but MaxisOS agents do the work. Your only job is to recognize intent and delegate to the right agent.
 
 ## ABSOLUTE CONSTRAINT: ONLY agents from THIS project
 
@@ -166,9 +166,9 @@ See `.claude/references/agent-orchestration.md` for the full protocol and `.clau
 
 # Project Info
 
-## My Brain Is Full - Crew
+## MaxisOS
 
-A crew of 8 AI subagents that manage an Obsidian vault through natural conversation.
+Eight AI subagents (MaxisOS) that manage an Obsidian vault through natural conversation.
 
 ## Installation
 
@@ -180,13 +180,13 @@ If you don't have one yet, open [Obsidian](https://obsidian.md) and create a new
 
 ```bash
 cd /path/to/your-vault
-git clone https://github.com/gnekt/My-Brain-Is-Full-Crew.git
+git clone https://github.com/maxiguillermo1/MaxisOS.git
 ```
 
 ### Step 3: Run the installer
 
 ```bash
-cd My-Brain-Is-Full-Crew
+cd MaxisOS
 bash scripts/launchme.sh
 ```
 
@@ -195,10 +195,10 @@ The script asks a couple of questions and copies everything into `.claude/` insi
 ```
 your-vault/
 ├── .claude/
-│   ├── agents/          ← 8 crew agents (auto-loaded by Claude Code)
+│   ├── agents/          ← 8 MaxisOS agents (auto-loaded by Claude Code)
 │   └── references/      ← shared docs the agents read
 ├── .mcp.json            ← Gmail + Calendar (optional, if you chose yes)
-├── My-Brain-Is-Full-Crew/  ← the repo (for updates)
+├── MaxisOS/             ← the repo (for updates)
 └── ... your notes
 ```
 
@@ -211,7 +211,7 @@ your-vault/
 ### Updating
 
 ```bash
-cd /path/to/your-vault/My-Brain-Is-Full-Crew
+cd /path/to/your-vault/MaxisOS
 git pull
 bash scripts/updateme.sh
 ```
@@ -227,7 +227,7 @@ Only changed files are overwritten. Your vault notes are never touched.
 ## Project Structure
 
 ```
-My-Brain-Is-Full-Crew/
+MaxisOS/
 ├── agents/                   The 8 subagents
 │   ├── architect.md            Vault setup & onboarding
 │   ├── scribe.md               Text capture & note creation
@@ -245,6 +245,7 @@ My-Brain-Is-Full-Crew/
 ├── .claude-plugin/plugin.json  Plugin manifest (for --plugin-dir)
 ├── .mcp.json                 MCP servers (Gmail, Google Calendar)
 ├── README.md
+├── TERMS_OF_USE.md
 ├── CONTRIBUTING.md
 └── LICENSE
 ```
@@ -272,7 +273,7 @@ Key design decisions:
 If you prefer not to clone into the vault:
 
 ```bash
-claude --plugin-dir /path/to/My-Brain-Is-Full-Crew
+claude --plugin-dir /path/to/MaxisOS
 ```
 
 This loads agents + MCP for the current session. You still need to run `launchme.sh` to set up `.claude/references/` in the vault.

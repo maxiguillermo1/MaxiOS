@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # =============================================================================
-# My Brain Is Full - Crew :: Updater
+# MaxisOS :: Updater
 # =============================================================================
 # After pulling new changes from the repo, run this to update the agents
 # in your vault:
 #
-#   cd /path/to/your-vault/My-Brain-Is-Full-Crew
+#   cd /path/to/your-vault/MaxisOS
 #   git pull
 #   bash scripts/updateme.sh
 #
@@ -41,7 +41,7 @@ fi
 # ── Banner ──────────────────────────────────────────────────────────────────
 echo ""
 echo -e "${BOLD}╔══════════════════════════════════════════╗${NC}"
-echo -e "${BOLD}║  My Brain Is Full - Crew :: Update       ║${NC}"
+echo -e "${BOLD}║  MaxisOS :: Update                       ║${NC}"
 echo -e "${BOLD}╚══════════════════════════════════════════╝${NC}"
 echo ""
 

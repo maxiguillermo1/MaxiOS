@@ -6,7 +6,7 @@
 
 The Architect is the first agent you meet and the one that shapes everything else. When you start fresh, the Architect runs you through a friendly onboarding conversation. Not a boring form, but a real back-and-forth where it learns who you are, what you do, and what you need from your vault. Based on your answers, it builds a personalized folder structure, creates templates, sets up naming conventions, and establishes a tag system that every other agent follows.
 
-Beyond onboarding, the Architect is your vault's structural authority. Whenever a new project needs a home, a new area of your life emerges, or your existing structure starts feeling cramped, the Architect steps in. It creates folders, designs templates, updates the rules, and makes sure every agent in the crew knows about the changes.
+Beyond onboarding, the Architect is your vault's structural authority. Whenever a new project needs a home, a new area of your life emerges, or your existing structure starts feeling cramped, the Architect steps in. It creates folders, designs templates, updates the rules, and makes sure every MaxisOS agent knows about the changes.
 
 Think of it as the urban planner of your knowledge city. It decides where things go, how streets are named, and what the building codes are, so everyone else can do their job without chaos.
 
@@ -48,7 +48,7 @@ In German: "Vault initialisieren", "Neues Projekt"
 
 **You:** Initialize my vault
 
-**Architect:** Welcome! I am the Architect. I will help you build your personal knowledge vault from the ground up. Before I create any folders or files, I want to understand who you are and how you work. This will take about 5 minutes, and everything you tell me will be saved so every agent in the crew can serve you better.
+**Architect:** Welcome! I am the Architect. I will help you build your personal knowledge vault from the ground up. Before I create any folders or files, I want to understand who you are and how you work. This will take about 5 minutes, and everything you tell me will be saved so every MaxisOS agent can serve you better.
 
 Let's start with the basics. What should I call you?
 

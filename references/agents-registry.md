@@ -1,6 +1,6 @@
 # Agent Registry
 
-This file is the **single source of truth** for all active agents in the crew. The dispatcher (`CLAUDE.md`) and all agents reference this file for routing decisions and inter-agent coordination.
+This file is the **single source of truth** for all active agents in MaxisOS. The dispatcher (`CLAUDE.md`) and all agents reference this file for routing decisions and inter-agent coordination.
 
 The registry is designed to grow: custom agents (see Issue #12) are added as new rows following the same schema.
 

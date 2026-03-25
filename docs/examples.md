@@ -1,173 +1,174 @@
-# Real-World Usage Examples
+# MaxisOS — usage examples
 
-Practical scenarios showing how the Crew works in daily life. Each example shows what you say and what happens behind the scenes.
+This page shows **what you might say** in chat and **what usually happens** behind the scenes. Numbers and file names below are **illustrations**; your vault may look slightly different depending on how you set things up.
+
+**You do not need to memorize phrases.** Plain language is enough; the right helper is chosen from context.
 
 ---
 
-## Scenario 1: The Brain Dump
+## Example 1: Brain dump after a meeting
 
-**Situation**: You just got out of a meeting and your head is full of scattered thoughts.
+**Situation:** You have several loose tasks and ideas in your head.
 
 **You say:**
-> "Quick dump: Marco wants the API docs by Thursday, Lisa mentioned the budget is getting cut by 15%, I had an idea about using webhooks instead of polling for the notification system, and I need to book a dentist appointment"
 
-**What happens:**
-1. **Scribe** detects 4 distinct items
-2. Creates 4 separate notes:
-   - `Task: API Docs for Marco.md` (with deadline: Thursday, linked to `[[Marco]]`)
-   - `Note: Budget Cut 15 Percent.md` (tagged with #budget, linked to `[[Lisa]]`)
-   - `Idea: Webhooks for Notifications.md` (tagged with #architecture, #notifications)
-   - `Task: Book Dentist Appointment.md` (tagged with #personal, #health)
-3. All notes land in `00-Inbox/` with proper frontmatter
-4. Scribe reports: *"Captured 4 notes: 2 tasks, 1 idea, 1 informational note. Shall I save them?"*
+> Quick dump: Marco wants the API docs by Thursday, Lisa said the budget might be cut about 15%, I had an idea to use webhooks instead of polling for notifications, and I need to book a dentist appointment.
+
+**What often happens:**
+
+1. The **Scribe** helper treats this as several items.  
+2. It may create separate notes such as:  
+   - A task note for the API docs (deadline Thursday, link to a person note for Marco if you use those).  
+   - A note about the budget comment (tags or links as appropriate).  
+   - An idea note about webhooks.  
+   - A personal task for the dentist.  
+3. New notes usually land in **`00-Inbox/`** first, with frontmatter filled in when your setup uses it.  
+4. Scribe may summarize: *“I captured four items: two tasks, one idea, one info note. Should I adjust anything?”*
 
 ---
 
-## Scenario 2: Evening Inbox Triage
+## Example 2: Evening inbox cleanup
 
-**Situation**: End of the day. Your inbox has accumulated 12 notes.
+**Situation:** Several notes piled up in your inbox folder.
 
 **You say:**
-> "Triage my inbox"
 
-**What happens:**
-1. **Sorter** scans all 12 notes in `00-Inbox/`
-2. Reads each note's content and frontmatter
-3. Files them:
-   - 3 meeting notes go to `06-Meetings/2026/03/`
-   - 2 project tasks go to `01-Projects/Rebrand/`
-   - 1 person note goes to `05-People/`
-   - 2 ideas go to `03-Resources/Ideas/`
-   - 2 ambiguous notes are kept in inbox with questions for you
-4. Updates 3 MOCs that gained new entries
-5. Leaves a message for **Connector** to check new links
-6. Reports the full summary with a clear breakdown
+> Triage my inbox.
+
+**What often happens:**
+
+1. The **Sorter** scans notes in **`00-Inbox/`**.  
+2. It reads content (and metadata if present).  
+3. It moves or suggests moves, for example:  
+   - Meeting-style notes → **`06-Meetings/`** (often with a date path).  
+   - Project work → **`01-Projects/...`**.  
+   - People-related snippets → **`05-People/`** or linked notes.  
+   - Ideas → a resources or ideas area such as **`03-Resources/`**.  
+4. Notes that are unclear may stay in the inbox with **questions for you**.  
+5. It may update **MOC** (map of content) notes when your vault uses them.  
+6. It can suggest follow-up for **Connector** (links) or other helpers.  
+7. You get a **short report** of what moved and what needs a decision.
 
 ---
 
-## Scenario 3: Meeting Transcription
+## Example 3: Meeting notes from a transcript
 
-**Situation**: You recorded a 45-minute sprint planning meeting and pasted the raw transcript.
+**Situation:** You have raw text from a meeting (paste or file).
 
 **You say:**
-> "Transcribe this meeting, it was the Q2 sprint planning with Marco, Lisa, and Ahmed. We met today at 10am."
 
-*[pastes raw transcript]*
+> Transcribe this meeting. It was Q2 sprint planning with Marco, Lisa, and Ahmed, today at 10am.
 
-**What happens:**
-1. **Transcriber** processes the raw text
-2. Identifies speakers from context
-3. Generates:
-   - Executive summary (4 sentences)
-   - 8 key discussion points
-   - 3 decisions made (with who decided and conditions)
-   - Action items table (6 tasks, assigned to specific people, with deadlines)
-   - Detailed notes organized by topic
-   - 2 open questions for follow-up
-4. Creates wikilinks to all participants: `[[Marco]]`, `[[Lisa]]`, `[[Ahmed]]`
-5. Saves to `00-Inbox/` as `2026-03-21, Meeting, Q2 Sprint Planning.md`
-6. Leaves message for **Postman**: "Check if there were pre-meeting emails about Q2 planning"
+Then **paste the transcript** in the same message or the next one.
+
+**What often happens:**
+
+1. The **Transcriber** structures the text.  
+2. It may add:  
+   - A short **summary**  
+   - **Decisions** and **action items** (with owners/dates if visible in the text)  
+   - **Topics** in order  
+   - **Open questions**  
+3. It links people notes when your vault uses `[[Name]]` links.  
+4. It saves a file such as under **`06-Meetings/`** or **`00-Inbox/`** (depends on your rules).  
+5. It may suggest a next step (for example calendar or email checks) if that fits the content.
 
 ---
 
-## Scenario 4: Email Triage
+## Example 4: Email check
 
-**Situation**: Monday morning. You want to know what's important in your email.
+**Situation:** You want a quick view of important mail.
 
 **You say:**
-> "Check my email for anything urgent"
 
-**What happens:**
-1. **Postman** scans your Gmail inbox (last 48 hours)
-2. Reads 34 emails
-3. Filters:
-   - 22 newsletters/promos/notifications are ignored
-   - 3 action requests are saved as notes with tasks
-   - 2 deadline reminders are saved with deadline tags
-   - 4 informational emails from key contacts are saved as reference notes
-   - 1 meeting invitation is saved and flagged for calendar sync
-   - 2 ambiguous emails are summarized for your decision
-4. All notes land in `00-Inbox/`
-5. Creates wikilinks to people in `05-People/`
-6. Reports: *"34 emails scanned. 10 saved to vault (3 urgent, 2 deadlines, 4 info, 1 meeting). 22 filtered out. 2 need your input."*
+> Check my email for anything urgent.
+
+**Requirements:** Gmail connected through onboarding/installer (**Postman** helper).
+
+**What often happens:**
+
+1. **Postman** reads recent mail (scope depends on your setup).  
+2. It **skips** obvious noise when it can (newsletters, promos).  
+3. It **creates notes** for items that look actionable: deadlines, requests, key threads.  
+4. New notes usually go to **`00-Inbox/`** for you or **Sorter** to file.  
+5. You get a **summary**: what was saved, what was ignored, what needs your choice.
 
 ---
 
-## Scenario 7: Knowledge Discovery
+## Example 5: “What do I know about …?”
 
-**Situation**: You're writing a proposal and need context from your notes.
+**Situation:** You need context from old notes for writing or a decision.
 
 **You say:**
-> "What do I know about microservices architecture? I need to write a proposal."
 
-**What happens:**
-1. **Seeker** searches your entire vault
-2. Finds 7 relevant notes across different areas:
-   - 2 meeting notes where architecture was discussed
-   - 1 resource note on microservices patterns
-   - 3 project notes that reference architectural decisions
-   - 1 archived note from a past project
-3. Synthesizes: *"Based on your notes, here's what you've documented about microservices..."*
-4. Provides a structured summary with source citations (`[[Meeting: Architecture Review]]`, etc.)
-5. Identifies a gap: *"Note: your vault has no notes on service mesh or container orchestration. You might want to add these to your proposal research."*
+> What do I know about microservices architecture? I need to write a proposal.
+
+**What often happens:**
+
+1. **Seeker** searches the vault.  
+2. It gathers relevant notes (meetings, projects, resources, archive).  
+3. It answers in **plain language** and points to **sources** (note names or links).  
+4. It may flag **gaps** (“You have little on X—consider adding research”).
 
 ---
 
-## Scenario 8: Weekly Review
+## Example 6: Weekly review
 
-**Situation**: Sunday morning. Time for your weekly vault check-up.
+**Situation:** You want a health pass on the vault.
 
 **You say:**
-> "Run the weekly review"
 
-**What happens:**
-1. **Librarian** runs a 6-phase audit:
-   - Structure scan: all folders intact
-   - Duplicate detection: found 1 near-duplicate
-   - Link integrity: 3 broken links fixed automatically, 2 orphan notes flagged
-   - Frontmatter audit: 5 notes missing tags (auto-fixed)
-   - MOC review: 2 MOCs updated with new entries
-   - Growth analytics: 23 notes added this week, vault health score: 94%
-2. Generates a health report saved to `Meta/health-reports/`
-3. Reports: *"Your vault is in great shape! 1 duplicate needs your decision, 2 orphan notes might need homes. Everything else is handled."*
+> Run the weekly review.
+
+(or: **Weekly review**.)
+
+**What often happens:**
+
+1. **Librarian** checks structure, duplicates, broken links, tags/frontmatter, MOCs, and simple stats.  
+2. It may **fix** safe issues automatically and **list** items that need you.  
+3. It may write a short report under something like **`Meta/health-reports/`** if your vault defines that.  
+4. You get a **human-readable summary** of status and next actions.
 
 ---
 
-## Scenario 10: Graph Intelligence
+## Example 7: Finding missing links
 
-**Situation**: You want to understand how your knowledge connects.
+**Situation:** You want ideas for connecting notes.
 
 **You say:**
-> "Analyze my vault graph and find missing connections"
 
-**What happens:**
-1. **Connector** runs a full graph audit
-2. Reports:
-   - 247 notes, 412 links, average 1.7 links per note
-   - 18 orphan notes (7%, under the 10% target)
-   - 3 isolated clusters
-   - Top connected note: your MOC/Engineering with 23 links
-3. Discovers 12 suggested connections:
-   - 4 strong (should definitely be linked)
-   - 5 medium (probably useful)
-   - 3 serendipitous (unexpected but interesting)
-4. Presents each with explanation: *"Your note on 'Team Communication Patterns' should link to 'Sprint Retrospective Q1', because both discuss the same communication breakdown from different angles."*
+> Analyze my vault graph and find missing connections.
+
+(or: **Find connections for [note name]**.)
+
+**What often happens:**
+
+1. **Connector** scans links between notes.  
+2. It reports patterns: orphans, clusters, heavily linked notes.  
+3. It suggests **new links** with short **reasons** (“these two both discuss …”).  
+4. You choose what to accept; nothing should silently rewrite your vault without rules you agreed to in setup.
 
 ---
 
-## Daily Workflow Cheat Sheet
+## Quick reference: phrases to try
 
-| Time | What to say | Agent |
-|------|------------|-------|
-| Morning | "What's on my calendar today?" | Postman |
-| Morning | "Check my email" | Postman |
-| Any time | "Save this: [thought]" | Scribe |
-| After meeting | "Transcribe this meeting: [paste]" | Transcriber |
-| Evening | "Triage my inbox" | Sorter |
-| Weekly | "Weekly review" | Librarian |
-| When lost | "Find [topic]" | Seeker |
-| When stuck | "Find connections for [note]" | Connector |
+| When | Try saying | Helper |
+|------|------------|--------|
+| Morning | *What’s on my calendar today?* | Postman (if connected) |
+| Morning | *Check my email* | Postman (if connected) |
+| Any time | *Save this: …* | Scribe |
+| After a meeting | *Transcribe this meeting: …* (+ paste) | Transcriber |
+| Evening | *Triage my inbox* | Sorter |
+| Weekly | *Weekly review* | Librarian |
+| Stuck on a topic | *What do I know about …?* | Seeker |
+| Organizing notes | *Find connections for …* | Connector |
 
 ---
 
-*These are just examples. The beauty of the Crew is that you don't need to memorize commands. Just talk naturally, and the right agent will pick it up.*
+## Remember
+
+- **Same language you already use** is fine; helpers follow you.  
+- If a result is wrong, **ask for a correction** or **narrow the request** (“only search project X”).  
+- For anything critical (health, money, legal), **verify** outside the chat.
+
+More setup detail: [Getting started](getting-started.md).

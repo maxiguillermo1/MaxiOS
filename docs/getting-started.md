@@ -1,245 +1,260 @@
-# Getting Started with My Brain Is Full - Crew
+# Getting started with MaxisOS
 
-A step-by-step guide for setting up your AI-powered vault. No technical background required.
-
----
-
-## What you need before starting
-
-### Required
-- **Obsidian**: A free note-taking app. Download it at [obsidian.md](https://obsidian.md)
-- **Claude Code**: Anthropic's coding assistant. You need a Claude Pro, Max, or Team subscription.
-- **An Obsidian vault**: This is just a folder on your computer where Obsidian stores your notes. If you don't have one yet, Obsidian will create one for you when you first open it.
-- **Git**: A tool to download the project. On Mac, the terminal will prompt you to install it automatically the first time you use it. On Windows, download it from [git-scm.com](https://git-scm.com).
-
-### Optional (but recommended)
-- **Gmail account**: If you want the Postman agent to process your emails
-- **Google Calendar**: If you want calendar integration
+This guide walks you from zero to a working setup. You do not need a technical background—follow the steps in order.
 
 ---
 
-## Step 1: Install Obsidian
+## What you will do (checklist)
 
-1. Go to [obsidian.md](https://obsidian.md) and download the app for your system (Mac, Windows, or Linux)
-2. Open Obsidian
-3. If this is your first time, click **"Create new vault"**
-4. Give it a name (e.g., "My Brain", "Second Brain", "Knowledge Base", whatever feels right)
-5. Choose where to save it on your computer
-6. Remember this location. You'll need it in Step 3
+Do these once, top to bottom:
 
-### Install recommended plugins
+1. [ ] Install **Obsidian** and create a vault (a folder for your notes).
+2. [ ] Install **Claude Code** and sign in with a **Pro, Max, or Team** plan.
+3. [ ] Copy **MaxisOS** into your vault and run the installer script.
+4. [ ] Open **Claude Code** with your **vault folder** as the project (this part is easy to get wrong—see Step 4).
+5. [ ] In chat, say: **“Initialize my vault”** and answer the setup questions.
 
-Inside Obsidian:
-1. Go to **Settings** (gear icon, bottom left)
-2. Click **Community plugins**
-3. Click **Browse**
-4. Search for and install these plugins:
+After that, you use MaxisOS by **talking to Claude** in plain language.
 
-**Essential (install these first):**
-| Plugin | What it does |
-|--------|-------------|
-| **Templater** | Makes templates work with dynamic content (dates, etc.) |
-| **Dataview** | Lets you query your notes like a database |
-| **Calendar** | Visual calendar in the sidebar |
-| **Tasks** | Better task management with due dates and queries |
+---
 
-**Recommended (install when ready):**
-| Plugin | What it does |
-|--------|-------------|
-| **QuickAdd** | Rapid note capture |
-| **Folder Notes** | Index notes for folders |
-| **Tag Wrangler** | Manage and rename tags in bulk |
-| **Periodic Notes** | Weekly and monthly review notes |
-| **Omnisearch** | Better search across your vault |
+## Before you start: what to download
 
-Don't worry if this feels like a lot. The Architect agent will remind you about missing plugins during setup.
+| You need | What it is | Link |
+|----------|------------|------|
+| **Obsidian** | Free app where your notes live | [obsidian.md](https://obsidian.md) |
+| **Claude Code** | Anthropic’s app that runs MaxisOS inside your vault | [claude.ai/code](https://claude.ai/code) |
+| **Paid Claude plan** | Pro, Max, or Team (required for Claude Code) | Same as above |
+| **Git** | Lets your computer download MaxisOS from the internet | Mac: often prompted in Terminal; Windows: [git-scm.com](https://git-scm.com) |
+
+**Optional (only if you want email and calendar in your vault):**
+
+- Gmail and Google Calendar, connected when the installer or onboarding asks.
+
+---
+
+## Step 1: Install Obsidian and create a vault
+
+1. Download Obsidian from [obsidian.md](https://obsidian.md) for your computer (Mac, Windows, or Linux).
+2. Open Obsidian.
+3. Choose **Create new vault** (or open an existing vault if you already use Obsidian).
+4. Pick a **name** (for example “Notes” or “Work vault”).
+5. Pick a **folder location** on your computer and finish the wizard.
+6. **Remember that folder path**—you will use it in Step 3.
+
+### Recommended Obsidian plugins (optional but useful)
+
+These are not required for MaxisOS to run, but they make Obsidian nicer:
+
+1. In Obsidian, open **Settings** (gear icon, bottom left).
+2. Open **Community plugins** → turn on **Safe mode** off if asked → **Browse**.
+3. Install these when you are ready:
+
+**Start with these four:**
+
+| Plugin | Why |
+|--------|-----|
+| **Templater** | Smarter note templates |
+| **Dataview** | Tables and queries over your notes |
+| **Calendar** | Calendar in the sidebar |
+| **Tasks** | Tasks with due dates |
+
+**Add later if you like:** QuickAdd, Folder Notes, Tag Wrangler, Periodic Notes, Omnisearch.
+
+During setup, the **Architect** helper may remind you about plugins if something is missing.
 
 ---
 
 ## Step 2: Install Claude Code
 
-1. Go to [claude.ai/code](https://claude.ai/code) and follow the instructions to install Claude Code
-2. You need a **Claude Pro**, **Max**, or **Team** subscription
-3. You can use either the **Desktop app** (Cowork) or the **CLI** (command-line interface). The Crew works on both
+1. Open [claude.ai/code](https://claude.ai/code) and install **Claude Code** for your system.
+2. Sign in with an account that has **Claude Pro**, **Max**, or **Team**.
+3. You can use **Desktop (Cowork)** or the **terminal** (`claude` command). MaxisOS supports both.
 
 ---
 
-## Step 3: Install the Crew
+## Step 3: Put MaxisOS inside your vault and run the installer
 
-Open your terminal and navigate to your Obsidian vault folder:
+MaxisOS must live **inside** your Obsidian vault folder so helpers can read and write your notes.
+
+### 3a. Open a terminal
+
+- **Mac:** Press `Command + Space`, type `Terminal`, press Enter.
+- **Windows:** Press `Windows + R`, type `cmd`, press Enter.
+
+### 3b. Go to your vault folder
+
+Replace the path with **your** vault location (the folder you chose in Step 1):
 
 ```bash
 cd /path/to/your-vault
 ```
 
-> **Not sure how to open the terminal?** On Mac, press `Command + Space`, type "Terminal", and press Enter. On Windows, press `Windows + R`, type "cmd", and press Enter.
+**Tip:** On Mac, you can type `cd ` (with a space), then drag your vault folder from Finder into the terminal window, then press Enter.
 
-Clone the repo inside your vault:
+### 3c. Download MaxisOS
 
 ```bash
-git clone https://github.com/gnekt/My-Brain-Is-Full-Crew.git
+git clone https://github.com/maxiguillermo1/MaxisOS.git
 ```
 
-Run the installer:
+That command creates a folder named `MaxisOS` inside your vault (matching the GitHub repo name). The rest of this guide assumes that folder name. Official repo: [github.com/maxiguillermo1/MaxisOS](https://github.com/maxiguillermo1/MaxisOS).
+
+### 3d. Run the installer
 
 ```bash
-cd My-Brain-Is-Full-Crew
+cd MaxisOS
 bash scripts/launchme.sh
 ```
 
-The script will ask two quick questions:
-1. **Is this your vault folder?** Confirm or enter the correct path
-2. **Do you use Gmail or Google Calendar?** Choose yes to set up the Postman integration
+The script will ask short questions, for example:
 
-When it's done, your vault will look like this:
+- Whether the vault path is correct.
+- Whether to set up **Gmail / Google Calendar** (for the **Postman** helper).
+
+When it finishes, your vault should look roughly like this:
 
 ```
 your-vault/
 ├── .claude/
-│   ├── agents/          ← 8 crew agents (Claude Code CLI)
-│   ├── skills/          ← 8 crew skills (Claude Code Desktop / Cowork)
-│   └── references/      ← shared docs the agents read
-├── CLAUDE.md            ← project instructions
-├── .mcp.json            ← Gmail + Calendar (only if you said yes)
-├── My-Brain-Is-Full-Crew/  ← the repo (for future updates)
-└── ... your Obsidian notes
+│   ├── agents/          ← helpers for Claude Code in the terminal
+│   ├── skills/          ← same helpers for Desktop / Cowork
+│   └── references/      ← shared instructions
+├── CLAUDE.md            ← how Claude should behave in this vault
+├── .mcp.json            ← only if you enabled mail/calendar connectors
+├── MaxisOS/             ← this project (use `git pull` here to update)
+└── … your notes …
 ```
 
-> **Something went wrong?** The most common issue is that `git` isn't installed. On Mac, the terminal will prompt you to install it automatically. On Windows, download it from [git-scm.com](https://git-scm.com). If you're stuck, just show this page to a tech-savvy friend. It takes 60 seconds.
+**Installer problems?** The most common issue is **Git** not installed. Install it from the link in the table above, then run Step 3 again. If you are stuck, ask someone comfortable with computers to run the two commands in **3c** and **3d** for you.
 
 ---
 
-## Step 4: Connect your vault
+## Step 4: Open Claude Code **in your vault folder**
 
-1. Open Claude Code (CLI or Desktop)
-2. Open it **inside your Obsidian vault folder**. This is important: Claude needs to be in your vault to read and write your notes.
+Claude Code must use your **vault** as the working folder—not the `MaxisOS` subfolder only, and not your Desktop.
 
-If you're using the CLI:
+**Terminal:**
+
 ```bash
 cd /path/to/your-vault
 claude
 ```
 
-If you're using Claude Code Desktop (Cowork), open the vault folder as your working directory.
+**Desktop (Cowork):** Open your **vault** folder as the project / workspace.
+
+If Claude Code is pointed at the wrong folder, the helpers will not see your notes.
 
 ---
 
 ## Step 5: Initialize your vault
 
-This is the fun part. Just type:
+In the Claude Code chat, type exactly:
 
-> **"Initialize my vault"**
+> **Initialize my vault**
 
-The **Architect** agent will wake up and start a friendly conversation with you. It will ask:
+The **Architect** helper starts onboarding. Typical topics:
 
-### About you
-- What should I call you?
-- What's your preferred language?
-- What do you do? (student, professional, creative, researcher...)
-- What brought you here? (overwhelm, organization, health, productivity...)
+**About you**
 
-### About your vault
-- Are you new to Obsidian, or migrating from an existing vault?
-- Do you want all 8 agents, or just some?
-- What areas of your life do you want to manage?
+- What to call you  
+- Preferred language  
+- What you do (work, study, etc.)  
+- What you want help with  
 
-### About integrations (optional)
-- Do you want email triage? (requires Gmail connection)
-- Do you want calendar integration? (requires Google Calendar connection)
+**About the vault**
 
-After the conversation, the Architect creates your entire vault structure, saves your profile, and leaves you a personalized welcome note.
+- New vault vs. existing notes  
+- Which helpers you want active  
+- Which areas of life you want to organize  
 
----
+**Connections (optional)**
 
-## Step 6: Start using it
+- Email triage (Gmail)  
+- Calendar (Google Calendar)  
 
-From now on, you just talk to Claude. Here are some things to try on your first day:
-
-### Capture some thoughts
-> "Save this: I had an idea about reorganizing the team standup. Maybe we should do async updates on Mondays and only meet on Wednesdays"
-
-The **Scribe** will turn this into a clean note in your inbox.
-
-### Dump several things at once
-> "Quick notes: need to call the dentist, also Marco mentioned a book called Thinking Fast and Slow, and I should review the Q3 budget before Friday"
-
-The **Scribe** detects multiple items and creates separate notes for each.
-
-### Check your email
-> "Check my email for anything important"
-
-The **Postman** scans your Gmail, saves actionable emails, and gives you a summary.
-
-### File everything
-> "Triage my inbox"
-
-The **Sorter** processes all notes in your inbox and files them to the right places.
-
-### Search your brain
-> "What do I know about the Henderson project?"
-
-The **Seeker** searches your vault and synthesizes an answer with source citations.
+When onboarding finishes, the Architect creates folders, saves your profile, and usually leaves a short welcome note.
 
 ---
 
-## Step 7: Build daily habits
+## Step 6: Try it on day one
 
-The Crew works best with simple daily routines:
+You do not need special commands. Examples:
 
-### Morning (2 minutes)
-> "Check my calendar for today" to see what's ahead
-> "Any messages from the crew?" to check if agents flagged anything
+| Say this | What usually happens |
+|----------|----------------------|
+| *Save this: …* | **Scribe** turns it into a note in your inbox area. |
+| *Quick notes: …* (several items) | **Scribe** splits them into separate notes when that makes sense. |
+| *Check my email for anything important* | **Postman** reads Gmail (if connected) and summarizes. |
+| *Triage my inbox* | **Sorter** moves inbox notes into the right folders. |
+| *What do I know about …?* | **Seeker** searches your vault and answers with references. |
 
-### Throughout the day
-> Just dump thoughts as they come. The Scribe handles the rest.
+More ideas: [Examples](examples.md).
 
-### Evening (5 minutes)
-> "Triage my inbox" to let the Sorter file everything
+---
 
-### Weekly (10 minutes)
-> "Weekly review" for a full vault health check from the Librarian
+## Step 7: Simple habits (optional)
+
+| When | Say |
+|------|-----|
+| Morning | *What’s on my calendar today?* (if Postman is set up) |
+| Any time | *Save this: …* |
+| Evening | *Triage my inbox* |
+| Weekly | *Weekly review* or *Run the weekly review* |
 
 ---
 
 ## Troubleshooting
 
-### "The agent doesn't seem to activate"
-Make sure Claude Code is open inside your vault folder (not a different directory). Verify the agent files exist at `.claude/agents/` in your vault. If you're using Cowork/Desktop, check that `.claude/skills/` was also created by the installer. Try saying the trigger phrase differently. Agents understand natural language in multiple languages.
+### “Nothing happens” or “the helper doesn’t run”
 
-### "Gmail/Calendar isn't working"
-The Postman needs Gmail and Google Calendar MCP connectors. Run the installer again (`bash scripts/launchme.sh`) and answer **yes** to the Gmail/Calendar question, or manually copy `.mcp.json` from the repo to your vault root. Then authorize the connection when Claude Code prompts you.
+1. Confirm Claude Code is opened with **`your-vault`** as the project folder (Step 4).  
+2. Check that `.claude/agents/` exists **inside** `your-vault`.  
+3. On Desktop, also check `.claude/skills/`.  
+4. Rephrase your request; helpers understand normal language in many languages.
 
-### "My vault structure looks different from the docs"
-The Architect customizes the structure based on your onboarding answers.
+### Gmail or Calendar does not work
 
-### "How do I update to a new version?"
+Postman needs the mail/calendar connectors. Run the installer again from the `MaxisOS` folder:
 
 ```bash
-cd /path/to/your-vault/My-Brain-Is-Full-Crew
+cd /path/to/your-vault/MaxisOS
+bash scripts/launchme.sh
+```
+
+Say **yes** when asked about Gmail/Calendar, then approve access when Claude Code prompts you.
+
+### My folders look different from the docs
+
+The **Architect** customizes layout from your onboarding answers. That is expected.
+
+### Update MaxisOS after `git pull`
+
+```bash
+cd /path/to/your-vault/MaxisOS
 git pull
 bash scripts/updateme.sh
 ```
 
-Only changed files are updated. Your vault notes are never touched.
+This updates project files only, not your personal notes.
 
-### "An agent did something weird"
-Open an issue on GitHub with:
-1. What you asked
-2. What happened
-3. What you expected
+### A helper did something unexpected
 
-### "I want to change my profile"
-> "Update my profile" and the Architect will help you modify your settings
+Open an issue on the project’s GitHub and include: what you said, what happened, what you wanted.
 
----
+### Change your profile later
 
-## Next steps
-
-- **[Examples](examples.md)**: See real-world usage scenarios
-- **[Mobile Access](mobile-access.md)**: Use the Crew from your phone
-- **[Meet the Agents](agents/)**: Deep-dive into each agent's capabilities
-- **[Contributing](../CONTRIBUTING.md)**: Help make the Crew better
+Say: **Update my profile** and follow the Architect’s prompts.
 
 ---
 
-*Remember: the best organizational system is the one you actually use. Start small. Talk to Claude. Let the Crew handle the rest.*
+## Where to go next
+
+- **[Examples](examples.md)** — concrete “you say / what happens” scenarios  
+- **[Mobile access](mobile-access.md)** — use MaxisOS from your phone (computer stays on)  
+- **[Meet the helpers](agents/)** — what each role is for  
+- **[Contributing](../CONTRIBUTING.md)** — improve MaxisOS  
+
+---
+
+*The best system is one you actually use. Start small, talk in plain language, and let the helpers handle filing when you want them to.*

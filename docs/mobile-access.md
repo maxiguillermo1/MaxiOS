@@ -1,160 +1,160 @@
-# Using the Crew from Your Phone
+# Use MaxisOS from your phone
 
-> A guide to controlling your vault from your phone using Claude Code's Remote Control feature.
+Your notes stay on your computer. This guide shows how to **chat with MaxisOS from your phone** while Claude Code runs **on your Mac or PC**.
 
 ---
 
-## How it works
+## How this works (simple picture)
 
-Claude Code has a feature called **Remote Control** that lets you control a local Claude Code session from your phone's browser or the Claude mobile app. Your computer runs Claude Code locally (with full access to your vault, agents, and MCP servers), and your phone acts as a remote interface.
-
-Nothing moves to the cloud. Your vault stays on your computer. Your phone just sends messages and receives responses.
+1. **On your computer:** Claude Code is running with your Obsidian vault open (same setup as normal MaxisOS use).  
+2. **On your phone:** You open a **remote session** in a browser or the Claude app.  
+3. **Messages** go through Anthropic’s service to reach your computer’s session; **your vault files stay local** on the computer.
 
 ```
 Phone (browser or Claude app)
-    ↓ sends messages via Anthropic servers
-Your computer (Claude Code running locally)
-    ↓ executes agents, reads/writes vault
-Your Obsidian vault (local files)
+        ↓ messages through Anthropic
+Computer (Claude Code + your vault)
+        ↓ reads and writes files
+Obsidian vault on disk
 ```
 
-### A real-world example
-
-I use this on the go. Before leaving, I start a Remote Control session on my laptop. Out and about, I open the session on my phone and ask: "What's on my calendar today?" or "Save this: just had an idea about reorganizing the team standup." I can even search my vault with "What do I know about the Henderson project?" and get a full answer with sources, right from my phone.
-
-The vault, the agents, the MCP servers: everything works exactly as if I were sitting at my computer.
+**Important:** This is **not** a separate mobile Obsidian app. If the computer is off or asleep, the phone cannot reach your vault.
 
 ---
 
-## Requirements
+## What you need
 
-- **Claude Code v2.1.51 or later** (check with `claude --version`)
-- **Claude Pro, Max, or Team subscription** (not API keys)
-- Your computer must stay **on and connected to the internet** during the session
-- A phone with a browser or the Claude mobile app (iOS/Android)
+| Requirement | Details |
+|-------------|---------|
+| **Claude Code** | Version **2.1.51 or newer** (in terminal: `claude --version`) |
+| **Subscription** | Claude **Pro, Max, or Team** (not API-only keys for this flow) |
+| **Computer** | Stays **on**, **unlocked or awake enough** to run Claude Code, and **online** while you use the phone |
+| **Phone** | Browser or Claude mobile app (iOS / Android) |
+| **MaxisOS** | Already installed in your vault and tested once from the computer ([Getting started](getting-started.md)) |
 
-> **Team/Enterprise users:** your admin must enable Remote Control at `claude.ai/admin-settings/claude-code`.
+**Team / Enterprise:** An admin may need to turn on Remote Control at [claude.ai/admin-settings/claude-code](https://claude.ai/admin-settings/claude-code).
 
 ---
 
-## Setup (one time)
+## One-time prep on your computer
 
-If you haven't already, make sure Claude Code is authenticated and your vault is trusted:
+1. Open a terminal.  
+2. Go to your **vault folder** (the same folder you use for MaxisOS—not only the `MaxisOS` subfolder):
 
 ```bash
 cd /path/to/your-vault
+```
+
+3. Start Claude Code:
+
+```bash
 claude
 ```
 
-If this is your first time, Claude Code will ask you to log in (`/login`) and accept the workspace trust dialog. Once that's done, you're set.
+4. The first time, complete **login** (`/login` if asked) and **accept** the workspace trust prompt for this vault.
+
+5. Quit when finished, or leave the session—you only need to know that login and trust already worked.
 
 ---
 
-## Starting a session
+## Start a remote session (each time you want phone access)
 
-On your computer, open a terminal and run:
+### Option A — Start remote control from the terminal
+
+1. On the computer, open Terminal.  
+2. Run:
 
 ```bash
 cd /path/to/your-vault
-claude remote-control --name "My Brain"
+claude remote-control --name "MaxisOS vault"
 ```
 
-This starts a local Claude Code session and displays:
-- A **session URL** you can open on your phone
-- A **QR code** you can scan (press spacebar to toggle it)
+Use any short **name** you like; it helps you spot the session in a list later.
 
-The session stays running, waiting for connections. Keep this terminal open.
+3. Leave this terminal window **open**. You should see:
 
-### Alternative: enable on an existing session
+- A **link** to open on your phone, and/or  
+- Instructions to press **spacebar** to show a **QR code**.
 
-If you already have Claude Code running, type this inside the session:
+### Option B — Add remote control to a session you already have
+
+If Claude Code is already running in that vault, type in the chat:
 
 ```
-/remote-control My Brain
+/remote-control MaxisOS vault
 ```
 
-This makes your current session accessible remotely without starting a new one.
+Again, you can change the name.
 
 ---
 
-## Connecting from your phone
+## Connect from your phone
 
-You have three options:
+Pick one method:
 
-### Option 1: QR code (fastest)
-Press spacebar in the terminal to show the QR code. Scan it with your phone's camera or the Claude mobile app.
+| Method | What to do |
+|--------|------------|
+| **QR code** | On the computer terminal, press **spacebar** until a QR code appears. Scan with the phone camera or Claude app. |
+| **Link** | Copy the **session URL** from the terminal and open it in the phone browser. |
+| **Session list** | On the phone, open [claude.ai/code](https://claude.ai/code), find your session (often a green indicator), and tap it. |
 
-### Option 2: Session URL
-Copy the URL shown in the terminal and open it in your phone's browser.
+After you connect, type (or dictate) the **same kinds of messages** you would on the computer, for example:
 
-### Option 3: Session list
-Go to [claude.ai/code](https://claude.ai/code) on your phone. Your session will appear in the list with a green indicator. Tap it to connect.
+- *Save this: idea for next week’s team meeting*  
+- *Check my email for anything urgent*  
+- *What’s on my calendar tomorrow?*  
+- *What do I know about the Henderson project?*
 
----
-
-## Using the Crew from your phone
-
-Once connected, you use the Crew exactly as you would on your computer. Just type (or use voice input) and the agents respond:
-
-- "Save this: had a great idea about reorganizing the team standup" (Scribe captures it)
-- "Check my email for anything urgent" (Postman scans Gmail)
-- "What's on my calendar tomorrow?" (Postman checks Google Calendar)
-- "Find my notes about the Henderson project" (Seeker searches your vault)
-
-Everything runs on your computer. Your phone is just the interface.
+Execution still happens **on your computer**; the phone is only the remote keyboard and screen.
 
 ---
 
-## Tips for mobile use
+## Tips
 
-- **Use voice input.** Most phones have built-in speech-to-text on the keyboard. Talking is faster than typing on a phone, and the Scribe handles messy voice input perfectly.
-- **Keep sessions short and focused.** Mobile is great for quick captures, grocery runs, and check-ins. Save deep work for your computer.
-- **Name your sessions.** The `--name` flag makes it easy to find the right session on `claude.ai/code` if you have multiple projects.
-- **Your computer must stay awake.** If it goes to sleep or loses internet for more than ~10 minutes, the session ends. Adjust your sleep settings before leaving.
-- **Works on mobile data.** WiFi is smoother, but cellular works fine for text-based interactions.
+- **Voice input** on the phone is fine; helpers are used to informal wording.  
+- **Short sessions** work well (quick capture, quick checks). Long deep work is easier at the desk.  
+- **Sleep:** If the computer sleeps or drops the network for a long time, the session usually ends. Adjust **Energy / sleep** settings if you need phone access while away.  
+- **Mobile data** often works; Wi‑Fi is usually smoother.
 
 ---
 
 ## Troubleshooting
 
-### "Remote Control is not yet enabled"
+### “Remote Control is not yet enabled”
 
-Make sure these environment variables are NOT set in your shell:
+- For **Team/Enterprise**, ask an admin to enable Remote Control.  
+- On your computer, make sure these are **not** forced on (they can block the feature):
 
 ```bash
 unset CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC
 unset DISABLE_TELEMETRY
 ```
 
-For Team/Enterprise accounts, ask your admin to enable Remote Control in the admin settings.
+### Session vanishes on the phone
 
-### Session disappears from the list
+The computer may have slept or lost the internet. Wake it, check the terminal, and start `claude remote-control` again if needed.
 
-Your computer probably went to sleep or lost internet. Go back to your computer, check the terminal, and restart the session if needed.
+### Helpers do not respond like on desktop
 
-### Agents don't seem to activate
+Confirm Claude Code on the computer was started from **`/path/to/your-vault`**, not from a random folder. MaxisOS loads from that vault’s `.claude/` folder.
 
-Make sure the terminal on your computer is running Claude Code **inside your vault folder**. If you started it in a different directory, the agents won't be loaded.
+### QR code will not scan
 
-### QR code won't scan
-
-Press spacebar to toggle the QR code display. If your terminal font is too small, try zooming in, or just copy the URL instead.
+Press **spacebar** to refresh the QR display. If needed, use the **URL** from the terminal instead of the code.
 
 ---
 
-## What this is NOT
+## What this is not
 
-To be clear about limitations:
-
-- This is **not a standalone mobile app.** Your computer must be running Claude Code for it to work.
-- This does **not** sync your vault to the cloud. Everything stays local on your computer.
-- You **cannot** use this with terminal SSH apps (Termius, Blink, etc.). Remote Control works through the browser or Claude mobile app only.
-- If your computer is off, there is no session to connect to.
+- **Not** a replacement for having Obsidian on the phone—your files stay on the computer unless you sync them some other way.  
+- **Not** cloud storage for the vault by itself—Remote Control only forwards chat to your local session.  
+- **Not** supported through generic SSH terminal apps; use the **browser** or **Claude app** as documented by Anthropic.  
+- **Not** available if the computer is **off**—there is no session to attach to.
 
 ---
 
 ## Further reading
 
-- [Claude Code Remote Control documentation](https://docs.anthropic.com/en/docs/claude-code/remote-control)
-- [Getting Started with the Crew](getting-started.md)
-- [Examples of daily usage](examples.md)
+- [Claude Code Remote Control (official docs)](https://docs.anthropic.com/en/docs/claude-code/remote-control)  
+- [Getting started with MaxisOS](getting-started.md)  
+- [Examples](examples.md)  
